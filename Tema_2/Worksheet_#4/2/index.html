@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de la Pantalla</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Información Pantalla Cliente</h2>
+<table id="TablaDeInformacion">
+    <tr>
+        <th>Propiedad</th>
+        <th>Valor</th>
+    </tr>
+</table>
+
+<script>
+    function completaTablaPantalla() {
+        // Datos de la pantalla que queremos mostrar
+        const datosPantalla = [
+            ['Ancho', screen.width], // Ancho de la pantalla en píxeles
+            ['Altura', screen.height], // Altura de la pantalla en píxeles
+            ['Ancho Total', screen.availWidth], // Ancho disponible excluyendo elementos como la barra de tareas
+            ['Altura Total', screen.availHeight], // Altura disponible de la pantalla
+            ['Profundidad de color', screen.colorDepth + ' bits'], // Profundidad de color en bits
+            ['Resolución de píxeles por pulgada (DPI)', screen.pixelDepth + ' bits'] // Resolución de los píxeles
+        ];
+
+        // Seleccionamos la tabla en el documento HTML
+        const tabla = document.getElementById('TablaDeInformacion');
+        
+        // recorremos cada elemento del array datosPantalla y, en cada iteración accedemos a la propiedad y valor correspondientes.
+        // innerHTML Crea una nueva fila en la tabla HTML con la información.
+        for (let i = 0; i < datosPantalla.length; i++) {
+            // Añadimos cada fila usando una plantilla sencilla
+            tabla.innerHTML += '<tr><td>' + datosPantalla[i][0] + '</td><td>' + datosPantalla[i][1] + '</td></tr>';
+        }
+    }
+
+    // Llamada a la función para llenar la tabla cuando se carga la página
+    completaTablaPantalla();
+</script>
+
+</body>
+</html>

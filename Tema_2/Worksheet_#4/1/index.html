@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Navegador</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Información Navegador</h2>
+<table id="TablaDeInformacion">
+    <tr>
+        <th>Propiedad</th>
+        <th>Valor</th>
+    </tr>
+</table>
+
+<script>
+    function completar() {
+        const tabla = document.getElementById('TablaDeInformacion');
+        const datos = [
+            ['Usuario', navigator.userAgent],
+            ['Idioma', navigator.language],
+            ['Ancho', screen.width],
+            ['Altura', screen.height],
+            ['Ancho ventana', window.innerWidth],
+            ['Altura ventana', window.innerHeight]
+        ];
+
+        for (let i = 0; i < datos.length; i++) {
+            tabla.innerHTML += `<tr><td>${datos[i][0]}</td><td>${datos[i][1]}</td></tr>`;
+        }
+    }
+
+    completar(); // Llamada a la función para llenar la tabla
+</script>
+
+</body>
+</html>

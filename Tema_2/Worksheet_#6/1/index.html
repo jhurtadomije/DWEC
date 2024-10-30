@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Ejemplo con Imágenes y Enlaces</title>
+    <style>
+        .resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Página</h1>
+
+    <h2>Secciones</h2>
+    <ul>
+        <li><a href="#seccion1">Sección 1</a></li>
+        <li><a href="#seccion2">Sección 2</a></li>
+        <li><a href="#seccion3">Sección 3</a></li>
+    </ul>
+
+    <h2 id="seccion1">Sección 1</h2>
+    <img src="imagenes/1.jpg" id="imagen1" alt="Imagen 1 de ejemplo">
+    <img src="imagenes/2.jpg" id="imagen2" alt="Imagen 2 de ejemplo">
+
+    <h2 id="seccion2">Sección 2</h2>
+    <img src="imagenes/3.jpg" id="imagen3" alt="Imagen 3 de ejemplo">
+    <img src="imagenes/4.jpg" id="imagen4" alt="Imagen 4 de ejemplo">
+
+    <h2 id="seccion3">Sección 3</h2>
+    <p>Esta sección contiene más contenido de ejemplo.</p>
+
+    <h2>Acciones</h2>
+    <ul>
+        <li><a href="#" onclick="mostrarNumeroDeImagenes()">Número de imágenes</a></li>
+        <li><a href="#" onclick="mostrarIDPrimeraImagen()">ID de la primera imagen</a></li>
+        <li><a href="#" onclick="mostrarNumeroDeEnlaces()">Número de enlaces</a></li>
+        <li><a href="#" onclick="cambiarTitulo()">Cambiar título</a></li>
+    </ul>
+
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function mostrarNumeroDeImagenes() {
+            const numeroDeImagenes = document.getElementsByTagName('img').length;
+            document.getElementById('resultado').innerText = 'Número de imágenes: ' + numeroDeImagenes;
+        }
+
+        function mostrarIDPrimeraImagen() {
+            const primeraImagen = document.getElementsByTagName('img')[0].id;
+            document.getElementById('resultado').innerText = 'ID de la primera imagen: ' + primeraImagen;
+        }
+
+        function mostrarNumeroDeEnlaces() {
+            const numeroDeEnlaces = document.getElementsByTagName('a').length;
+            document.getElementById('resultado').innerText = 'Número de enlaces: ' + numeroDeEnlaces;
+        }
+
+        function cambiarTitulo() {
+            const nuevoTitulo = prompt('Nuevo título:');
+            if (nuevoTitulo) {
+                document.title = nuevoTitulo;
+                document.getElementById('resultado').innerText = 'Título cambiado a: ' + nuevoTitulo;
+            }
+        }
+    </script>
+</body>
+</html>
