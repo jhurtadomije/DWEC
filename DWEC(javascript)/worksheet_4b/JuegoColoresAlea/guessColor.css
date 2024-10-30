@@ -1,0 +1,101 @@
+
+body {
+    font-family: Pacifico, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #5ca3a3;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-info {
+    background-color: #5ca3a3;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#colorValue {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 510px; /* 3 * 150px (ancho de caja) + 2 * 20px (gap entre cajas) + 20px (margen extra) */
+    margin: 0 auto 20px;
+}
+
+.difficulty-buttons {
+    display: flex;
+}
+
+button {
+    background-color: white;
+    color: #5ca3a3;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.difficulty-buttons button {
+    margin-left: 10px;
+}
+
+#vidas {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.colors-container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.colorBox {
+    width: 150px;
+    height: 150px;
+}
+
+.colorBox:hover {
+    opacity: 0.7;
+}
+
+#mensaje {
+    font-size: 2rem;
+    color: #ff0000;
+    text-align: center;
+}
