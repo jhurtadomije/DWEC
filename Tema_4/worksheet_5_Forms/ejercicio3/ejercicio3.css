@@ -1,0 +1,66 @@
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #cc938e;
+            font-family: Arial, sans-serif;
+            color: #ffe7e0;
+        }
+        .container {
+            text-align: center;
+            background-color: #f28b82;
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: normal;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-align: center;
+            color: #f28b82;
+            background-color: #ffe7e0;
+        }
+        .requirements {
+            text-align: left;
+            font-size: 14px;
+            color: #ffe7e0;
+        }
+        .requirements li {
+            list-style: none;
+            margin: 5px 0;
+            opacity: 0.6;
+        }
+        .valid {
+            opacity: 1;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .submit {
+            background-color: #ffc7c3; /* Color cuando está desactivado */
+            color: #f28b82;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            opacity: 0.6;
+            cursor: not-allowed;
+            transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+        }
+        .submit.active {
+            background-color: #1dd816; /* Color de fondo cuando está activado */
+            color: #f28b82; /* Color de texto cuando está activado */
+            opacity: 1;
+            cursor: pointer;
+        }

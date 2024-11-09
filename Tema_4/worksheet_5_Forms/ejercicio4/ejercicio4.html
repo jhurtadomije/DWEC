@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" href="ejercicio4.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+            <!-- Imagen de fondo con estilo ilustrativo -->
+        </div>
+        <div class="right">
+            <h2>Welcome to CrowdRise</h2>
+            <p>Let's get you all set up so you can verify your nonprofit and begin setting up your first campaign!</p>
+    
+            <form id="registrationForm">
+                <div class="form-group">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+    
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter">
+                    <label for="newsletter">Yes, I want to receive CrowdRise's emails</label>
+                </div>
+    
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms, Privacy Policy and Fees</a>.</label>
+                </div>
+    
+                <button type="submit" class="submit-btn">Sign Up</button>
+    
+                <div class="login-link">
+                    <span>Already have an account? <a href="#">Log in</a>.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="ejercicio4.js"></script>
+</body>
+</html>

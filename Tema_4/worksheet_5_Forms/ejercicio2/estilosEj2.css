@@ -1,0 +1,118 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Estilo del formulario */
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+/* Título del formulario */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Estilo para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Estilo cuando el campo es válido */
+input.input-success {
+  border-color: #4CAF50;
+}
+
+/* Estilo cuando el campo es inválido */
+input.input-error {
+  border-color: #f44336;
+}
+
+/* Mensajes de error o éxito */
+span.error {
+  color: #f44336;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+span.success {
+  color: #4CAF50;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Botón de envío */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Estilo de los labels */
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin: 5px 0;
+}
+
+/* Estilo del contenedor de cada campo */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Estilo de la caja de error en los campos */
+input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Asegura que el formulario no se desborde en pantallas pequeñas */
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+    width: 90%;
+  }
+}
