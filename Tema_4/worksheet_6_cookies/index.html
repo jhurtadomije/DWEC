@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bienvenida</title>
+        <link rel="stylesheet" href="estilo.css"></link>
+        <script src="index.js"></script>
+    </head>
+    <body>
+    <h1 id="mensajeBienvenida"></h1>
+
+    <a href="#" id="logoutLink" onclick="logout()">Cerrar sesión</a>
+            <div id="settings">
+                <h3>Configura tu apariencia</h3>
+                <label for="bgColor">Color de fondo:</label>
+                <input type="color" id="bgColor" onchange="actualizaConfig()">
+                <br><br>
+
+                <label for="pColor">Color del texto:</label>
+                <input type="color" id="pColor" onchange="actualizaConfig()">
+                <br><br>
+
+                <label for="fontSize">Tamaño de la letra:</label>
+                <input type="range" id="fontSize" min="10" max="50" onchange="actualizaConfig()">
+            </div>
+    </body>
+</html>
