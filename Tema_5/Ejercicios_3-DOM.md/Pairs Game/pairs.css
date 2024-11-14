@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+/* El contenedor con Flexbox */
+.tablero-juego {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cartas se ajusten en varias filas */
+    justify-content: center; /* Centra las cartas en el tablero */
+    gap: 10px; /* Espacio entre las cartas */
+    width: 450px; /* Ancho total del tablero */
+}
+
+.carta {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.girada {
+    background-color: #fff;
+}
+
+.emparejada {
+    background-color: #4CAF50;
+}
