@@ -1,14 +1,15 @@
 
 
+function potenciaRecursiva(base, exponente) {
+    // Casos base
+    if (exponente === 0) {
+        return 1;
+    } else if (exponente < 0) {
+        return 1 / potenciaRecursiva(base, -exponente);
+    }
 
-function factorial(n){
-
-        if(n==1)
-            return 1;
-        else
-            return n*factorial(n-1)
-
-
+    // Caso recursivo
+    else {
+        return base * potenciaRecursiva(base, exponente - 1);
+    }
 }
-
-console.log(factorial(4));

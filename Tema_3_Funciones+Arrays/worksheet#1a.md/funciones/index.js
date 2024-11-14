@@ -69,7 +69,14 @@ function getBiggestNumber(numbers){
 }
 console.log(getBiggestNumber([4, 6 ,2, 8, 1]));
 
+const getBiggestNumber = (numbers) => {
+    if (numbers.length === 0) {
+        return undefined;
+    }
+    return Math.max(...numbers);
+};
 
+console.log(getBiggestNumber([4, 6, 2, 8, 1]));
 
 
 /**
@@ -121,7 +128,18 @@ function getRandomColorSequence(colors, length){
 }
 console.log(getRandomColorSequence(["red", "blue", "green"], 4));
 
+const getRandomColorSequence = (colors, length) => {
+    if (colors.length === 0 || length <= 0) {
+        return [];
+    }
 
+    const sequence = [];
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        sequence.push(colors[randomIndex]);
+    }
+    return sequence;
+};
 
 
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reading List</title>
+    <link rel="stylesheet" href="estilosTRL.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <img src="iconos/libro.png" alt="imagen libro" class="logo"> </img>
+        <h1>The Reading List</h1>
+
+    </header>
+    <div class="content">
+        <section class="form-section">
+            <h2>Book</h2>
+            <form id="book-form">
+                <label for="title">Titulo</label>
+                <input type="text" id="title" required>
+
+                <label for="author">Autor</label>
+                <input type="text" id="author" required>
+
+                <label for="genre">Genero</label>
+                <input type="text" id="genre" required>
+
+                <button type="button" id="add-book">Añadir Libro</button>
+            </form>
+        </section>
+        <section class="list-section">
+            <h2>Mi lista de lectura</h2>
+            <p>Libros leídos: <span id="books-read">0</span></p>
+            <ul id="book-list"></ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 - Jhurtadomije</p>
+    </footer>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
