@@ -1,3 +1,5 @@
+window.onload = function(){
+
 let intervalo;
 let tiempo = 0; // En segundos
 let corriendo = false;
@@ -51,3 +53,4 @@ resetButton.addEventListener('click', () => {
     stopButton.disabled = true;
 });
 
+}

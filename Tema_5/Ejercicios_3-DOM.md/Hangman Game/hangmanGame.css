@@ -1,78 +1,102 @@
 
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
-        }
 
-        .juego {
+            background-color: #b3d134;
+            color: #ffffff;
             display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: flex-start; /* Cambiado de center a flex-start para alinear hacia arriba */
+            height: 100vh;
+            padding-top: 20px; /* Agregado para dar un espacio superior */
+        }
+
+
+        .contenedor {
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            width: 90%;
+            max-width: 800px;
             flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+            gap: 20px; /* Agregado para espaciar elementos sin usar márgenes individuales */
         }
 
-        .palabra {
-            font-size: 30px;
-            letter-spacing: 10px;
-            margin: 20px;
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .mensaje {
-            font-size: 20px;
-            margin: 10px;
+        p {
+            font-size: 1.2em;
+            margin: 10px 0 20px 0;
         }
 
-        .intentos {
-            font-size: 20px;
-            margin: 10px;
-            color: red;
+        .categoria{
+            font-size: 1.2em;
+            margin: 20px 0;
+            text-transform: uppercase;
         }
 
-        .letras {
+        .palabra{
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 15px;
+            margin-bottom: 20px;
+        }
+
+        .vidas{
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .alfabeto{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
         }
 
-        .letra {
-            padding: 10px 15px;
-            font-size: 20px;
-            background-color: #eee;
+        .alfabeto button{
+            background-color: #ffffff;
+            color: #92c83e;
+            border: none;
             border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1em;
             cursor: pointer;
+            transition: background 0.3s;
         }
 
-        .letra:active {
-            background-color: #ccc;
-        }
-
-        .letra-desactivada {
-            background-color: #ddd;
+        /*        .alfabeto:hover{
+                    background: #92c83e;
+                    color: #ffffff;
+                }
+        */
+        .alfabeto button:disabled{
+            background-color: #cccccc;
+            color: #666666;
             cursor: not-allowed;
         }
 
-        .reiniciar {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
+
+        .boton-reiniciar {
+            background: #ffffff;
+            color: #92c83e;
             border: none;
             border-radius: 5px;
+            padding: 15px 20px;
+            font-size: 1.2em;
             cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
         }
 
-        .reiniciar:hover {
-            background-color: #45a049;
+        .boton-reiniciar:hover {
+            background: #ffffff;
+            color: #444444;
         }
-   

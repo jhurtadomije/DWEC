@@ -1,74 +1,112 @@
-const palabra = 'DESARROLLO';
-let palabraOculta = Array(palabra.length).fill('_');
-let intentos = 6;
+// Palabras y categorías
+const categorias = {
+    Animals: ['DOG', 'CAT', 'ELEPHANT', 'TIGER', 'HORSE'],
+    Colors: ['RED', 'BLUE', 'GREEN', 'YELLOW', 'PURPLE'],
+    Fruits: ['APPLE', 'BANANA', 'ESTERNOCLEIDOMASTOIDEO', 'STRAWBERRY', 'ORANGE']
+};
+
+// Variables globales
+let categoriaSeleccionada = 'Animals'; // Categoría predeterminada
+let palabra = '';
+let palabraOculta = [];
+let intentos = 10;
 let letrasUsadas = [];
 
+// Referencias al DOM
+const categoriaElement = document.getElementById('categoria');
 const palabraElement = document.getElementById('palabra');
-const intentosElement = document.getElementById('intentos');
+const intentosElement = document.getElementById('vidas');
 const letrasElement = document.getElementById('letras');
-const mensajeElement = document.getElementById('mensaje');
 const reiniciarButton = document.getElementById('reiniciar');
 
+// Función para actualizar el DOM
 function actualizarPantalla() {
-    palabraElement.textContent = palabraOculta.join(' ');
-    intentosElement.textContent = `Intentos restantes: ${intentos}`;
-    mensajeElement.textContent = '';
+    // Mostrar categoría actual
+    categoriaElement.textContent = `Categoría: ${categoriaSeleccionada}`;
 
-    // Mostrar las letras disponibles
-    letrasElement.innerHTML = '';
+    // Mostrar palabra oculta
+    palabraElement.textContent = palabraOculta.join(' ');
+
+    // Mostrar intentos restantes
+    intentosElement.textContent = `You have ${intentos} lives`;
+
+    // Crear botones de letras
+    letrasElement.innerHTML = ''; // Limpiar las letras existentes
     for (let i = 65; i <= 90; i++) {
         const letra = String.fromCharCode(i);
-        const letraButton = document.createElement('button');
-        letraButton.textContent = letra;
-        letraButton.classList.add('letra');
-        
-        // Desactivar las letras usadas
+        const boton = document.createElement('button');
+        boton.textContent = letra;
+        boton.className = 'boton-letra';
+
+        // Desactivar botón si ya fue usado
         if (letrasUsadas.includes(letra)) {
-            letraButton.classList.add('letra-desactivada');
-            letraButton.disabled = true;
+            boton.disabled = true;
         } else {
-            letraButton.addEventListener('click', () => adivinarLetra(letra));
+            boton.addEventListener('click', () => manejarLetra(letra));
         }
-        
-        letrasElement.appendChild(letraButton);
+
+        letrasElement.appendChild(boton);
     }
 
-    // Comprobar si el juego ha terminado
+    // Verificar estado del juego
     if (intentos <= 0) {
-        mensajeElement.textContent = '¡Perdiste! La palabra era: ' + palabra;
+        intentosElement.textContent = `¡Ohhh no! The correct word was: ${palabra}`;
+        bloquearBotones();
     } else if (!palabraOculta.includes('_')) {
-        mensajeElement.textContent = '¡Ganaste! Has adivinado la palabra.';
+        intentosElement.textContent = '¡Congratulations! You WON the game';
+        bloquearBotones();
     }
 }
 
-function adivinarLetra(letra) {
+// Manejar letra seleccionada
+function manejarLetra(letra) {
     letrasUsadas.push(letra);
+    let acierto = false;
 
     // Verificar si la letra está en la palabra
-    let letraEncontrada = false;
     for (let i = 0; i < palabra.length; i++) {
         if (palabra[i] === letra) {
             palabraOculta[i] = letra;
-            letraEncontrada = true;
+            acierto = true;
         }
     }
 
-    if (!letraEncontrada) {
+    // Reducir intentos si no acierta
+    if (!acierto) {
         intentos--;
     }
 
     actualizarPantalla();
 }
 
-function reiniciarJuego() {
+// Bloquear todos los botones
+function bloquearBotones() {
+    const botones = letrasElement.querySelectorAll('button');
+    botones.forEach(boton => (boton.disabled = true));
+}
+
+// Iniciar un nuevo juego
+function iniciarJuego() {
+    palabra = categorias[categoriaSeleccionada][Math.floor(Math.random() * categorias[categoriaSeleccionada].length)];
     palabraOculta = Array(palabra.length).fill('_');
-    intentos = 6;
+    intentos = 10;
     letrasUsadas = [];
-    mensajeElement.textContent = '';
     actualizarPantalla();
 }
 
-reiniciarButton.addEventListener('click', reiniciarJuego);
+// Cambiar de categoría al hacer clic en el texto de categoría
+categoriaElement.addEventListener('click', () => {
+    const categoriasDisponibles = Object.keys(categorias);
+    let indiceActual = categoriasDisponibles.indexOf(categoriaSeleccionada);
+    categoriaSeleccionada = categoriasDisponibles[(indiceActual + 1) % categoriasDisponibles.length];
+    iniciarJuego();
+});
 
-// Iniciar el juego
-actualizarPantalla();
+// Reiniciar el juego
+reiniciarButton.addEventListener('click', iniciarJuego);
+
+// Inicializar al cargar la página
+window.addEventListener('DOMContentLoaded', () => {
+    iniciarJuego(); // Iniciar con la categoría predeterminada
+    actualizarPantalla(); // Mostrar botones de letras
+});

@@ -1,39 +1,60 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #89cff0;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f2f2f2;
+    flex-direction: column;
 }
 
-/* El contenedor con Flexbox */
-.tablero-juego {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las cartas se ajusten en varias filas */
-    justify-content: center; /* Centra las cartas en el tablero */
-    gap: 10px; /* Espacio entre las cartas */
-    width: 450px; /* Ancho total del tablero */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#tablero-juego {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 10px;
+    justify-content: center;
 }
 
 .carta {
     width: 100px;
-    height: 100px;
-    background-color: #ddd;
+    height: 150px;
+    background-color: #34495e;
+    background-image: repeating-linear-gradient(
+    40deg,
+    #ecf0f1,
+    #ecf0f1 10px,
+    #bdc3c7 10px,
+    #bdc3c7 20px
+    ) ;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 2em;
+    color: transparent;
     cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.girada {
-    background-color: #fff;
+.carta.girada {
+    background-color: #2ecc71; /* Fondo visible al girar */
+    color: white; /* El texto se muestra al girar */
+    background-image: none; /* Elimina las líneas del reverso */
 }
 
-.emparejada {
-    background-color: #4CAF50;
+.carta.emparejada {
+    background-color: #27ae60;
+    pointer-events: none; /* No permite hacer clic en cartas emparejadas */
+}
+
+#timer {
+    font-size: 1.5em;
+    margin-top: 10px;
 }

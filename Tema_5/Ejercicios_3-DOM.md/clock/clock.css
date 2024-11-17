@@ -1,49 +1,50 @@
 
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+
+    background-color: #f69f3c;
+    color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Cambiado de center a flex-start para alinear hacia arriba */
     height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    padding-top: 20px; /* Agregado para dar un espacio superior */
 }
 
 .cronometro {
+    padding: 30px;
+    text-align: center;
     display: flex;
+    width: 90%;
+    max-width: 800px;
     flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+    gap: 20px;
 }
 
 .tiempo {
     font-size: 50px;
+    color: white;
     margin: 20px 0;
 }
 
 .botones {
+    align-items: center;
+    justify-content: center;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .boton {
+
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #4CAF50;
+    background-color: transparent;
     color: white;
-    border: none;
+    border: solid 1px white;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.boton:hover {
-    background-color: #45a049;
-}
-
-.boton:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-}

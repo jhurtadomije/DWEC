@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Ahorcado - Hangman</title>
-    <link rel="stylesheet" href="hangmanGame.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego del Ahorcado</title>
+        <link rel="stylesheet" href="hangmanGame.css">
+    </head>
+    <body>
+        <div class="contenedor">
+            <h1>HANGMAN</h1>
+            <h2>VANILLA JAVASCRIPT HANGMAN GAME</h2>
+            <p>Use the alphabet below to guess the word, or click hint to get a clue</p>
 
-<div class="juego">
-    <div class="palabra" id="palabra"></div>
-    <div class="intentos" id="intentos">Intentos restantes: 6</div>
-    <div class="letras" id="letras"></div>
-    <div class="mensaje" id="mensaje"></div>
-    <button class="reiniciar" id="reiniciar">Reiniciar Juego</button>
-</div>
+            <!-- Mostrar las letras disponibles -->
+            <div id="letras" class="alfabeto"></div>
 
-<script src="hangmanGame.js"></script>
+            <!-- Mostrar la categoría seleccionada -->
+            <div id="categoria" class="categoria">The Chosen Category is: Animales</div>
 
-</body>
+            <!-- Mostrar la palabra oculta y los intentos restantes -->
+            <div id="palabra" class="palabra">_ _ _ _</div>
+            <div id="vidas" class="vidas">You have 10 lives</div>
+
+            <!-- Botones de control -->
+            <button id="reiniciar" class="boton-reiniciar">Restart</button>
+        </div>
+
+        <script src="hangmanGame.js"></script>
+    </body>
 </html>
