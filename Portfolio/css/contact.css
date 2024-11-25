@@ -1,0 +1,120 @@
+/* Sección de contacto */
+#contact {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--color-fondo), var(--color-secundario));
+    text-align: center;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-primario);
+    margin-bottom: 2rem;
+    opacity: 0; /* Inicialmente oculto */
+    animation: fadeInTitle 2s ease-out forwards; /* Añadir animación */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: flex-start; /* Ajustar al inicio */
+    align-items: center;
+    gap: 3rem;
+    max-width: 60rem; /* Máximo ancho del contenedor */
+    margin: 0 0 0 18%; /* Ajustar margen izquierdo para desplazar */
+    padding: 0 1rem; /* Añadir padding horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en nuevas filas en pantallas pequeñas */
+}
+
+.contact-info {
+    flex: 0 0 15rem; /* Ancho fijo y reducido */
+    text-align: left;
+    color: var(--color-texto);
+}
+
+.contact-info p {
+    margin-bottom: 2.5rem;
+    
+}
+
+.contact-form {
+    flex: 1 1 25rem; /* Ancho mínimo flexible */
+    max-width: 37.5rem; /* Máximo ancho del formulario */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.3125rem; /* Bordes redondeados en unidades rem */
+    border: 0.0625rem solid var(--color-texto);
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Transición para todas las propiedades */
+}
+
+#contact input:focus, #contact textarea:focus {
+    border-color: var(--color-primario); /* Cambiar el color del borde al hacer focus */
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* Añadir sombra al hacer focus */
+    transform: scale(1.02); /* Aumentar ligeramente el tamaño al hacer focus */
+}
+
+#contact textarea {
+    height: 10rem; /* Altura del textarea */
+    resize: vertical; /* Permitir el cambio de tamaño vertical */
+}
+
+#contact button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: var(--color-hover);
+}
+
+/* Animación para el título */
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(1.875rem); /* Empieza desplazado hacia abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Aparece y vuelve a su posición original */
+    }
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0 1rem; /* Ajustar margen en dispositivos pequeños */
+    }
+
+    .contact-info, .contact-form {
+        flex-basis: 100%;
+    }
+
+    #contact form {
+        padding: 0 1rem; /* Ajustar el padding en dispositivos pequeños */
+    }
+
+    #contact textarea {
+        height: 8rem; /* Reducir la altura del textarea */
+    }
+}

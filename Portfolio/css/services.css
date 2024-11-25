@@ -1,0 +1,83 @@
+/* Sección Servicios */
+#services {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
+    text-align: center; /* Centra el contenido dentro de #services */
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+}
+
+/* Estilo para el título */
+#services .animated-title {
+    margin-bottom: 2rem; /* Espaciado debajo del título */
+    text-align: center; /* Asegura que el título esté centrado */
+}
+
+/* Título de la sección */
+#services h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Contenedor de los servicios */
+#services .services {
+    display: flex; /* Alinea los elementos en fila */
+    justify-content: center; /* Centra las cajas de servicio */
+    gap: 2rem; /* Espaciado entre las cajas */
+    flex-wrap: wrap; /* Permite que las cajas se acomoden en nuevas filas si no caben */
+    margin-top: 2rem; /* Espaciado superior para los servicios */
+}
+
+/* Estilo para las cajas de servicio */
+#services .service {
+    background: #fff;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Por defecto, ocupa el 100% del ancho */
+    max-width: 21.875rem; /* Limita el tamaño máximo de cada caja */
+    flex: 1 1 21.875rem; /* Asegura que las cajas sean responsivas */
+}
+
+/* Iconos de servicios */
+#services .service i {
+    font-size: 3rem; /* Tamaño grande para los iconos */
+    color: var(--color-primario); /* Color de los iconos */
+    margin-bottom: 1rem; /* Espaciado debajo del icono */
+    display: block;
+    text-align: center;
+}
+
+/* Títulos de los servicios */
+#services .service h3 {
+    font-size: 1.5rem;
+    color: var(--color-secundario); /* Color del título */
+    margin-bottom: 1rem;
+}
+
+/* Descripción de los servicios */
+#services .service p {
+    font-size: 1rem;
+    color: var(--color-secundario);
+    line-height: 1.5;
+}
+
+/* Efecto Hover en las cajas */
+#services .service:hover {
+    transform: translateY(-0.3125rem); /* Efecto de levitación */
+    box-shadow: 0 0.375rem 0.625rem rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    #services .services {
+        flex-direction: column; /* Apilar cajas en columna */
+        align-items: center;
+    }
+
+    #services .service {
+        max-width: 90%;
+        margin-bottom: 1rem; /* Añadir espacio entre las cajas */
+    }
+}

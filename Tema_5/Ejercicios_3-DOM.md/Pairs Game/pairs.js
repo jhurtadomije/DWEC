@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+
     const tableroJuego = document.getElementById('tablero-juego');
 
     // Lista de valores o símbolos para las parejas
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function girarCarta(evento) {
         const carta = evento.target;
 
-        // Evita girar cartas ya giradas o emparejadas
+        // Evitamos girar cartas ya giradas o emparejadas
         if (carta.classList.contains('girada') || carta.classList.contains('emparejada')) {
             return;
         }

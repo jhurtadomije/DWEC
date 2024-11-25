@@ -1,0 +1,146 @@
+/* Sección About */
+#about {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--color-fondo), var(--color-secundario));
+}
+
+#about .about-content {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem; /* Reducir la separación entre la imagen y el texto */
+    flex-wrap: wrap; /* Permite envolver contenido si es necesario */
+    text-align: center; /* Centrar el texto */
+}
+
+#about .about-image {
+    flex: 1;
+    max-width: 45%; /* Ajuste para mejorar el equilibrio */
+}
+
+#about img {
+    width: 100%;
+    height: auto;
+    max-width: 20rem;
+    border-radius: 50%;
+    border: 0.25rem solid var(--color-primario);
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards, scaleUp 1s ease-out 0.5s forwards;
+}
+
+/* Animación de entrada de la imagen */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.about-text {
+    flex: 2;
+    max-width: 55%; /* Ajuste para mejorar el equilibrio */
+    text-align: left;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-primario);
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: fadeInTitle 1.5s ease-out forwards;
+}
+
+@keyframes fadeInTitle {
+    0% { opacity: 0; transform: translateY(1.875rem); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo del texto */
+.about-text p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Checkbox oculto para manejar el estado de la visibilidad */
+.toggle-text {
+    display: none;
+}
+
+/* Por defecto, el texto extra está oculto */
+.extra-text {
+    display: none;
+}
+
+/* Cuando el checkbox está marcado, mostrar el texto extra */
+.toggle-text:checked ~ .extra-text {
+    display: block;
+}
+
+/* Cambiar el texto del botón cuando el checkbox está marcado */
+.toggle-text:checked ~ .extra-text ~ label .show-more-text {
+    display: none;
+}
+
+.toggle-text:checked ~ .extra-text ~ label .show-less-text {
+    display: inline;
+}
+
+/* Estilo del botón "Leer más/Mostrar menos" */
+.about-button {
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-primario);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.show-more-text {
+    display: inline;
+}
+
+.show-less-text {
+    display: none;
+}
+
+/* Estilos para dispositivos grandes */
+@media (min-width: 48rem) {
+    #about .about-image {
+        margin-left: 1rem; /* Añadir margen izquierdo en pantallas grandes */
+    }
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    #about .about-content {
+        flex-direction: column; /* Apilar contenido en columna */
+        align-items: center;
+        text-align: center; /* Asegurar que el texto esté centrado en pantallas pequeñas */
+    }
+
+    #about .about-image, #about .about-text {
+        max-width: 100%;
+    }
+
+    .about-title {
+        text-align: center; /* Centrar el título en dispositivos pequeños */
+    }
+
+    .about-text {
+        text-align: center; /* Centrar el texto en dispositivos pequeños */
+    }
+
+    .extra-text {
+        text-align: center; /* Centrar el texto extra en dispositivos pequeños */
+    }
+}

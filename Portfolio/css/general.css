@@ -1,0 +1,39 @@
+
+@import url('header.css');
+@import url('hero.css');
+@import url('about.css');
+@import url('contact.css');
+@import url('testimonios.css');
+@import url('services.css');
+@import url('skills.css');
+@import url('portfolio.css');
+@import url('responsive.css');
+@import url('footer.css');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #ffa500; 
+    --color-secundario: #2b2a50; 
+    --color-terciario: #8d4ef1;
+    --color-fondo: #4d4694; 
+    --color-texto: #fff; 
+    --color-barras: #b87070;
+    --color-hover: #ff8c00; 
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--color-fondo), var(--color-secundario));
+    color: var(--color-texto);
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}

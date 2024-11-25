@@ -1,0 +1,17 @@
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 1.5rem 0; 
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    font-size: 0.9rem;
+}
+
+footer p {
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: var(--color-primario);
+}

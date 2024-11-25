@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Portfolio</title>
+        <link rel="stylesheet" href="css/general.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header id="header"> 
+            <div class="logo"> 
+                <img src="imagenes/logo-jrhm.png" alt="miLogo"> 
+            </div> 
+            <nav class="menu"> 
+                <!-- Botón hamburguesa --> 
+                 <button id="menu-toggle" aria-label="Toggle menu" class="menuHamburguesa"> 
+                    <div class="line line1"></div> 
+                    <div class="line line2"></div> 
+                    <div class="line line3"></div> 
+                </button> 
+                <!-- Menú de navegación --> 
+                 <ul class="menu-list"> 
+                    <li><a href="#home">Home</a></li> 
+                    <li><a href="#about">About</a></li> 
+                    <li><a href="#portfolio">Projects</a></li> 
+                    <li><a href="#services">Services</a></li> 
+                    <li><a href="#skills">Hability</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li> 
+                    <li><a href="#contact">Contact</a></li> 
+                </ul> 
+            </nav>
+            </div> 
+        </header>
+        
+        <!-- Sección principal -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">¡Hola, soy José Ramón!</h1>
+                <p>Desarrollador FullStack junior apasionado por crear soluciones innovadoras.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn">Ver Portfolio</a>
+                    <a href="jhurtadomije.pdf" class="btn btn-secondary">Descargar CV</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/jhurtadomije/DWEC.git" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/tuusuario" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/jhurtadomije" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="imagenes/html.png" alt="Imagen representativa" class="hero-image">
+            </div>
+        </section>
+        
+        <!-- Sobre mí -->
+        <section id="about" class="about">
+                <div class="about-content">
+                    <!-- Imagen a la izquierda -->
+                    <div class="about-image">
+                        <img src="./imagenes/imagenPortfolio.png" alt="Mi Foto">
+                    </div>
+                    <!-- Texto a la derecha -->
+                    <div class="about-text">
+                        <h2 class="about-title">Sobre mí</h2>
+                        <p id="shortText">Soy un desarrollador web junior apasionado con experiencia en la creación de soluciones digitales efectivas...</p>
+                        
+                        <!-- Checkbox oculto para manejar el estado de la visibilidad -->
+                        <input type="checkbox" id="toggleText" class="toggle-text">
+                        
+                        <!-- Texto adicional oculto por defecto -->
+                        <div class="extra-text">
+                            <p>Mi experiencia abarca el desarrollo de sistemas a medida, integración de plataformas externas, y soluciones escalables para satisfacer las necesidades de cada cliente. Me esfuerzo por mantenerme actualizado con las últimas tendencias tecnológicas y metodologías ágiles, lo que me permite ofrecer resultados de alta calidad en plazos reducidos.</p>
+                            <p>Además de trabajar en proyectos individuales, he tenido la oportunidad de colaborar con equipos multidisciplinarios, donde he aprendido a comunicarme eficazmente con diseñadores, gerentes de producto y otros desarrolladores. Esta colaboración me ha permitido mejorar mis habilidades de liderazgo y trabajo en equipo, lo cual considero clave para el éxito de cualquier proyecto.</p>
+                            <p>Mi enfoque en la experiencia del usuario y la optimización de procesos me ha permitido desarrollar soluciones que no solo cumplen con los requisitos funcionales, sino que también mejoran la interacción de los usuarios con las plataformas. Me apasiona crear sitios web y aplicaciones que sean intuitivas, fáciles de usar y, sobre todo, que proporcionen una experiencia fluida y agradable.</p>
+                            <p>Siempre estoy buscando nuevas oportunidades para crecer profesionalmente y estar al tanto de las innovaciones en la tecnología. Creo firmemente que la evolución continua es esencial para mantenerse relevante en este campo y siempre estoy dispuesto a aprender y adaptarme a nuevas herramientas, lenguajes de programación y paradigmas de desarrollo.</p>
+                            <p>Aunque soy un desarrollador junior, mi dedicación y pasión por el desarrollo web me han permitido adquirir una sólida base técnica. Estoy siempre dispuesto a mejorar mis habilidades y enfrentar nuevos retos para crecer en mi carrera profesional.</p>
+                        </div>
+        
+                        <!-- Label que actúa como el botón "Leer más/Leer menos" -->
+                        <label for="toggleText" class="about-button">
+                            <!-- Texto alterna entre Leer más y Mostrar menos -->
+                            <span class="show-more-text">Leer más</span>
+                            <span class="show-less-text">Mostrar menos</span>
+                        </label>
+                    </div>
+                </div>
+        </section>
+
+        <!-- servicios-->
+        <section id="services">
+                <div class="animated-title">
+                    <h2>Mis Servicios</h2>
+                </div>
+                <div class="services">
+                    <div class="service">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Desarrollo Web</h3>
+                        <p>Creación de páginas web modernas, optimizadas y adaptables a cualquier dispositivo.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Desarrollo de Apps Móviles</h3>
+                        <p>Diseño y desarrollo de aplicaciones móviles intuitivas y funcionales para iOS y Android.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-database"></i>
+                        <h3>Gestión de Bases de Datos</h3>
+                        <p>Implementación, administración y optimización de bases de datos seguras.</p>
+                    </div>
+                </div>
+        </section>
+        
+        <!-- Habilidades -->
+        <section id="skills">
+            <h2 class="animated-title">Mis Habilidades</h2>
+                <div class="skills">
+                    <div class="skill">
+                        <span class="skill-title">HTML5</span>
+                        <div class="progress">
+                            <div class="progress-bar html"></div>
+                        </div>
+                        <span class="percentage">85%</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-title">CSS3</span>
+                        <div class="progress">
+                            <div class="progress-bar css"></div>
+                        </div>
+                        <span class="percentage">80%</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-title">JavaScript</span>
+                        <div class="progress">
+                            <div class="progress-bar js"></div>
+                        </div>
+                        <span class="percentage">75%</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-title">Java</span>
+                        <div class="progress">
+                            <div class="progress-bar java"></div>
+                        </div>
+                        <span class="percentage">80%</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-title">MySQL</span>
+                        <div class="progress">
+                            <div class="progress-bar mysql"></div>
+                        </div>
+                        <span class="percentage">75%</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-title">PHP</span>
+                        <div class="progress">
+                            <div class="progress-bar php"></div>
+                        </div>
+                        <span class="percentage">75%</span>
+                    </div>
+                </div>
+            
+        </section>
+        
+
+       <!-- Portfolio -->
+        <section id="portfolio">
+                <h2>Mi Portfolio</h2>
+                <div class="gallery">
+                    <div class="portfolio-item">
+                        <img src="imagenes/sticky.png" alt="Proyecto 1">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="imagenes/pong.png" alt="Proyecto 2">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="imagenes/codJS.png" alt="Proyecto 3">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="imagenes/readingBook.png" alt="Proyecto 4">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="imagenes/php.png" alt="Proyecto 5">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="imagenes/design.png" alt="Proyecto 6">
+                    </div>
+                </div>
+        </section>
+
+
+        <!-- Testimonios -->
+        <section id="testimonials">
+                <h2>Testimonios</h2>
+                <div class="testimonials">
+                    <!-- Testimonio 1 -->
+                    <div class="testimonial-card">
+                        <img src="imagenes/test_1.jpeg" alt="Cliente 1" class="testimonial-img">
+                        <h3>Juan Pérez</h3>
+                        <span>CEO de Empresa X</span>
+                        <p>"Excelente trabajo, el sitio web superó mis expectativas. ¡Altamente recomendado!"</p>
+                    </div>
+        
+                    <!-- Testimonio 2 -->
+                    <div class="testimonial-card">
+                        <img src="imagenes/test_2.jpeg" alt="Cliente 2" class="testimonial-img">
+                        <h3>María López</h3>
+                        <span>Directora Creativa</span>
+                        <p>"Muy profesional, el desarrollo de la app fue rápido y eficiente. Gran experiencia."</p>
+                    </div>
+        
+                    <!-- Testimonio 3 -->
+                    <div class="testimonial-card">
+                        <img src="imagenes/test_3.jpeg" alt="Cliente 3" class="testimonial-img">
+                        <h3>Pedro García</h3>
+                        <span>Fundador de Startup Y</span>
+                        <p>"El marketing digital ha aumentado mi tráfico web de manera impresionante. Gracias."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="imagenes/test_1.jpeg" alt="Cliente 4" class="testimonial-img">
+                        <h3>Francisco Carmona</h3>
+                        <span>CEO de Empresa V</span>
+                        <p>"Magnífico trabajo, superó mis expectativas."</p>
+                    </div>
+                </div>
+        </section>
+        
+        
+        
+
+        <!-- Contacto -->
+        <section id="contact">
+            <h2>Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong>Email:</strong> jhurtadomije@gmail.com</p>
+                    <p><strong>Teléfono:</strong> +34 652 407 574</p>
+                    <p><strong>Dirección:</strong> Calle Leones, 66, Albolote, Granada, España</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" name="name" placeholder="Nombre completo" required>
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        <textarea name="message" placeholder="Tu mensaje" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Pie de página -->
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 José Ramón Hurtado. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <script src="js/hamburguer.js"></script>
+    </body>
+</html>

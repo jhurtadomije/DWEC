@@ -1,0 +1,135 @@
+/* Sección principal */
+.hero {
+    display: flex; /* Distribuye contenido e imagen en línea */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--color-fondo), var(--color-terciario));
+    color: var(--color-texto);
+    text-align: center; /* Centrar el texto */
+}
+
+/* Contenido principal del Hero */
+.hero-content {
+    flex: 1; /* Ocupa la mitad del espacio */
+    margin-right: 5%; /* Ajustar espaciado entre texto e imagen */
+}
+.hero-title { 
+    font-size: 3rem; 
+    color: var(--color-primario);
+     margin-bottom: 2rem; 
+     opacity: 0; animation: 
+     fadeInHeroTitle 2s ease-out forwards; /* Añadir animación */ 
+    } 
+
+/* Animación para el título */ 
+@keyframes fadeInHeroTitle { 
+    0% { opacity: 0; transform: translateY(2rem); /* Empieza desplazado hacia abajo */ 
+     } 
+    100% { opacity: 1; transform: translateY(0); /* Aparece y vuelve a su posición original */ 
+    } 
+}
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Botones en la sección Hero */
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan si es necesario */
+    gap: 1rem; /* Añadir espacio entre los botones */
+    justify-content: center; /* Centrar los botones */
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    margin: 0.625rem 0.3125rem;
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: var(--color-primario);
+    border: none;
+    border-radius: 0.3125rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    background-color: var(--color-hover);
+}
+
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    border: 0.125rem solid var(--color-primario);
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+}
+
+/* Redes Sociales */
+.social-icons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem; /* Añadir espacio entre los iconos sociales */
+    justify-content: center; /* Centrar los iconos sociales */
+}
+
+.social-icons a {
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--color-hover);
+}
+
+/* Imagen del Hero */
+.hero-image-container {
+    flex: 0.8; /* Reduce espacio asignado a la imagen */
+    text-align: center; /* Centra la imagen */
+}
+
+.hero-image {
+    width: 70%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    max-width: 80vw; /* Limita el ancho máximo en pantallas grandes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: inline-block;
+    border-radius: 20px;
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image-container {
+        flex: 0;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 100%; /* ajustamos en proporcion a la pantalla */
+        height: auto;
+    }
+}

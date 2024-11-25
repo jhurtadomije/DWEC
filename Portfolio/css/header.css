@@ -1,0 +1,131 @@
+/* Estilo general del header */
+header {
+    background: linear-gradient(135deg, var(--color-fondo), var(--color-secundario));
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start; /* Alinear el logo a la izquierda por defecto */
+}
+
+header .logo img {
+    width: 12vw; 
+    height: auto;
+    min-width: 10rem; 
+    min-height: 5rem; 
+}
+
+/* Estilos básicos para el menú */
+.menu {
+    display: flex;
+    flex-grow: 1; /* Permite que el menú ocupe el espacio restante */
+    justify-content: flex-end; /* Alinea el menú a la derecha */
+}
+
+/* añadimos margen en pantallas grandes */
+@media (min-width: 769px) {
+    .menu {
+        margin-right: 15rem; /* Aumentar margen derecho */
+    }
+}
+
+.menuHamburguesa {
+    display: none; /* Ocultar el botón hamburguesa por defecto */
+    cursor: pointer;
+    background: none; /* Eliminar el fondo predeterminado del botón */
+    border: none; /* Eliminar el borde del botón */
+    outline: none; /* Eliminar el borde de enfoque */
+}
+
+.menuHamburguesa .line {
+    background-color: white;
+    height: 0.3rem;
+    margin: 0.5rem 0;
+    width: 25px; /* Ajusta el ancho de las líneas del botón */
+    transition: transform 0.3s ease;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0 2rem; 
+}
+
+/* Efecto hover en los enlaces del menú */
+.menu-list li a:hover {
+    color: var(--color-hover); /* Cambia el color al pasar el cursor */
+    text-decoration: underline; 
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Suaviza la transición */
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    
+    .menu-list {
+        display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 100%; /* Alinearlo justo debajo del header */
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para darle más profundidad */
+        align-items: flex-end; /* Alinear las opciones del menú a la derecha */
+    }
+
+    .menuHamburguesa {
+        display: block; /* Mostrar el botón hamburguesa en pantallas pequeñas */
+    }
+
+    .menu-list li {
+        border-top: 1px solid #444; /* Línea separadora entre elementos del menú */
+        padding: 1rem 0; /* Espaciado para cada elemento */
+    }
+
+    .menu-list li:first-child {
+        border-top: none; /* Eliminar la línea superior del primer elemento */
+    }
+
+    .menu-list li a {
+        display: block;
+        color: white;
+        font-size: 1.2rem;
+        text-align: right; 
+        padding-right: 1rem;
+    }
+
+    .line1.cambiar {
+        transform: rotate(45deg) translateY(0.8rem);
+    }
+
+    .line2.cambiar {
+        opacity: 0;
+    }
+
+    .line3.cambiar {
+        transform: rotate(-45deg) translateY(-0.8rem);
+    }
+
+    .menu-list.mostrar-menu {
+        display: flex; /* Mostrar el menú cuando se haga clic en el botón hamburguesa */
+    }
+}

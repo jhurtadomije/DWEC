@@ -1,0 +1,76 @@
+/* Sección Portfolio */
+#portfolio {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--color-secundario), var(--color-fondo));
+    text-align: center;
+}
+
+#portfolio h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--color-primario);
+    margin-bottom: 2rem;
+    opacity: 0; /* Inicialmente oculto */
+    animation: fadeInTitle 2s ease-out forwards; /* Añadir animación */
+}
+
+/* Contenedor para las imágenes */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas filas */
+    justify-content: space-between; /* Espacio igual entre elementos */
+    gap: 1.5rem; /* Espaciado uniforme entre las tarjetas */
+    padding: 0 2%; 
+}
+
+/* Estilo para cada imagen dentro de la galería */
+.portfolio-item {
+    flex: 1 1 calc(33.333% - 1rem); /* Ocupa un tercio del contenedor con espacio entre tarjetas */
+    overflow: hidden; 
+    border-radius: 0.625rem; /* Bordes redondeados */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Imagen dentro de la tarjeta */
+.portfolio-item img {
+    width: 100%; 
+    height: auto;
+    object-fit: cover; /* Recortamos la imagen proporcionalmente sin deformarla */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Añadir efectos al hacer hover */
+.portfolio-item:hover {
+    transform: translateY(-0.5rem); /* Efecto de elevación */
+    box-shadow: 0 0.75rem 1.125rem rgba(0, 0, 0, 0.2); /* Sombras más pronunciadas en hover */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Efecto de zoom en la imagen */
+}
+
+/* Animación para el título */
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(1.875rem); /* Empieza desplazado hacia abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Aparece y vuelve a su posición original */
+    }
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column; /* Cambiar a columna en dispositivos pequeños */
+        gap: 2rem; /* Añadir más espacio entre los elementos */
+    }
+
+    .portfolio-item {
+        width: 100%;
+        height: auto; 
+    }
+}
